@@ -10,11 +10,13 @@ var slider = sliderArr.map((slider, index) => {
   slid.appendChild(img);
   var h1 = document.createElement("h1");
   h1.innerText = slider.title;
-  slid.appendChild(h1);
-  document.querySelector(".musicSlider").appendChild(slid);
+  var div = document.createElement("div");
+  div.appendChild(slid);
+  div.appendChild(h1);
+  document.querySelector(".musicSlider").appendChild(div);
 });
 
-var h1 = document.querySelector(".slider>h1");
+var h1 = document.querySelector(".musicSlider>div>h1");
 var img = document.querySelector(".slider>img");
 var play = document.querySelector(".play");
 var pause = document.querySelector(".pause");

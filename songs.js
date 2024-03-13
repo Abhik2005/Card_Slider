@@ -3,7 +3,7 @@ const sliderArr = [
       id: 0,
       imgUrl:
         "https://i.ytimg.com/vi/XLqmL9cPN1E/mqdefault.jpg",
-      title: "Teri Baaton Mein Aisa Uljha Jiya (Title Track): Shahid Kapoor, Kriti Sanon | Raghav,Tanishk, Asees",
+      title: "Teri Baaton Mein Aisa Uljha Jiya",
       musicUrl: "./songs/Teri_Baaton_Mein_Aisa_Uljha_Jiya .mp3"
     },
     {
@@ -17,28 +17,28 @@ const sliderArr = [
       id: 2,
       imgUrl:
         "https://i.ytimg.com/vi/YxWlaYCA8MU/mqdefault.jpg",
-      title: "Jhoome Jo Pathaan Song | Shah Rukh Khan, Deepika | Vishal & Sheykhar, Arijit Singh, Sukriti, Kumaar",
+      title: "Jhoome Jo Pathaan Song ",
       musicUrl: "./songs/Jhoome_Jo_Pathaan.mp3"
     },
     {
       id: 3,
       imgUrl:
         "https://i.ytimg.com/vi/BddP6PYo2gs/mqdefault.jpg",
-      title: "Kesariya - Brahmāstra | Ranbir Kapoor | Alia Bhatt | Pritam | Arijit Singh | Amitabh Bhattacharya",
+      title: "Kesariya - Brahmāstra |",
       musicUrl: "./songs/Kesariya.mp3"
     },
     {
       id: 4,
       imgUrl:
         "https://i.ytimg.com/vi/k1K7F4Oz_oQ/mqdefault.jpg",
-      title: "Dil Ne Ye Kaha Hai Dil Se ((Jhankar)) 4K HD Video | Dhadkan | Akshay Kumar, Shilpa Shetty",
+      title: "Dil Ne Ye Kaha Hai Dil Se",
       musicUrl: "./songs/Dil_Ne_Ye_Kaha_Hai.mp3"
     },
     {
       id: 5,
       imgUrl:
         "https://i.ytimg.com/vi/td1iSp2CgYM/mqdefault.jpg",
-      title: "Sona Kitna Sona Hai Sone Jaise Tera Mann | Udit Narayan, Poornima | Hero No.1 | Hindi Song",
+      title: "Sona Kitna Sona Hai",
       musicUrl: "./songs/Sona_Kitna_Sona_Hai.mp3"
     },
   ];

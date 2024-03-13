@@ -8,194 +8,25 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      body,
-      html {
-        width: 100%;
-        height: 100%;
-      }
-      .main {
-        width: 100vw;
-        height: 100vh;
-        background-color: aqua;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-      .mainSlider {
-        width: 80%;
-        min-height: 30vh;
-        max-height: 50vh;
-        background-color: #fff;
-        border-radius: 10px;
-        white-space: nowrap;
-        overflow-y: hidden;
-      }
-      .mainSlider::-webkit-scrollbar {
-        display: none;
-      }
-      .slider {
-        width: 100%;
-        height: 100%;
-        background-color: indianred;
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        margin-right: 5px;
-      }
-      .slider:last-child {
-        margin-right: 0;
-      }
-      .slider img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .slider h1 {
-        font-size: 7vw;
-        color: rgba(30, 30, 30, 0.692);
-        position: absolute;
-        bottom: 5%;
-        left: 5%;
-      }
-      .leftArrow {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: rgba(128, 128, 128, 0.705);
-        border-radius: 50%;
-        top: 50%;
-        left: 15%;
-        transform: translate(-15%, -50%);
-        z-index: 99;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-      }
-      .rightArrow {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: rgba(128, 128, 128, 0.695);
-        border-radius: 50%;
-        top: 50%;
-        right: 15%;
-        transform: translate(-15%, -50%);
-        z-index: 99;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        color: white;
-        cursor: pointer;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <div class="main">
-      <div class="mainSlider">
-        <div class="leftArrow">
-          <i class="ri-arrow-left-line"></i>
-        </div>
-        <div class="rightArrow">
-          <i class="ri-arrow-right-line"></i>
-        </div>
+      <div class="mausicPlayer">
+        <header>
+          <i class="ri-menu-2-fill"></i>
+          <i class="ri-search-2-line"></i>
+        </header>
+        <div class="musicSlider"></div>
+        <footer>
+          <div class="leftArrow"><i class="ri-skip-back-line"></i></div>
+          <div><i class="play ri-play-circle-line"></i><i class="pause ri-pause-circle-line hidden"></i></div>
+          <div class="rightArrow"><i class="ri-skip-forward-line"></i></div>
+          <audio src="m1.m4a"></audio>
+        </footer>
       </div>
     </div>
-
-    <script>
-      var sliderArr = [
-        {
-          id: 0,
-          imgUrl:
-            "https://plus.unsplash.com/premium_photo-1705091981891-6a3819ead86e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8",
-          title: "AI",
-        },
-        {
-          id: 1,
-          imgUrl:
-            "https://images.unsplash.com/photo-1707343843437-caacff5cfa74?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8",
-          title: "Desert",
-        },
-        {
-          id: 2,
-          imgUrl:
-            "https://images.unsplash.com/photo-1682685797742-42c9987a2c34?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D",
-          title: "Heal",
-        },
-        {
-          id: 3,
-          imgUrl:
-            "https://plus.unsplash.com/premium_photo-1710118735364-c04ad6961401?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D",
-          title: "Food",
-        },
-      ];
-      var index = 0;
-
-      var slider = sliderArr.map((slider, index) => {
-        var slid = document.createElement("div");
-        slid.classList.add("slider");
-        var img = document.createElement("img");
-        img.src = slider.imgUrl;
-        slid.appendChild(img);
-        var h1 = document.createElement("h1");
-        h1.innerText = slider.title;
-        slid.appendChild(h1);
-        document.querySelector(".mainSlider").appendChild(slid);
-      });
-
-      document
-        .querySelector(".rightArrow")
-        .addEventListener("click", function () {
-          index++;
-          var slide = sliderArr.filter((slide) => {
-            return slide.id == index;
-          });
-          if (index < sliderArr.length - 1) {
-            document.querySelector(".slider>h1").innerHTML = slide[0].title;
-            document.querySelector(".slider>img").src = slide[0].imgUrl;
-          } else if (
-            index == sliderArr.length - 1 ||
-            index == sliderArr.length
-          ) {
-            index = -1;
-            document.querySelector(".slider>h1").innerHTML = slide[0].title;
-            document.querySelector(".slider>img").src = slide[0].imgUrl;
-          }
-        });
-
-      document
-        .querySelector(".leftArrow")
-        .addEventListener("click", function () {
-          index--;
-          var slide = sliderArr.filter((slide) => {
-            return slide.id == index;
-          });
-          if (index >= 0) {
-            document.querySelector(".slider>h1").innerHTML = slide[0].title;
-            document.querySelector(".slider>img").src = slide[0].imgUrl;
-          } else if (index < 0) {
-            index = sliderArr.length - 1;
-            if (index == 3) {
-              console.log(sliderArr[3], index);
-              document.querySelector(".slider>h1").innerHTML = sliderArr[3].title;
-              document.querySelector(".slider>img").src = sliderArr[3].imgUrl;
-            } else {
-              document.querySelector(".slider>h1").innerHTML = slide[0].title;
-              document.querySelector(".slider>img").src = slide[0].imgUrl;
-            }
-          }
-        });
-    </script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

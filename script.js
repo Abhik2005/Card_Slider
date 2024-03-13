@@ -16,9 +16,9 @@ var slider = sliderArr.map((slider, index) => {
 
 var h1 = document.querySelector(".slider>h1");
 var img = document.querySelector(".slider>img");
-var music = document.querySelector("audio");
 var play = document.querySelector(".play");
 var pause = document.querySelector(".pause");
+var music = document.querySelector("audio");
 
 function musicPlay() {
   pause.style.display = "block";

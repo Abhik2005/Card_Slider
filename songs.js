@@ -4,21 +4,21 @@ const sliderArr = [
       imgUrl:
         "https://i.ytimg.com/vi/XLqmL9cPN1E/mqdefault.jpg",
       title: "Teri Baaton Mein Aisa Uljha Jiya (Title Track): Shahid Kapoor, Kriti Sanon | Raghav,Tanishk, Asees",
-      musicUrl: "m1.m4a"
+      musicUrl: "./songs/Teri_Baaton_Mein_Aisa_Uljha_Jiya .mp3"
     },
     {
       id: 1,
       imgUrl:
         "https://images.unsplash.com/photo-1707343843437-caacff5cfa74?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8",
       title: "Desert",
-      musicUrl: "m1.m4a"
+      musicUrl: "./songs/m1.m4a"
     },
     {
       id: 2,
       imgUrl:
-        "https://images.unsplash.com/photo-1682685797742-42c9987a2c34?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ytimg.com/vi/YxWlaYCA8MU/mqdefault.jpg",
       title: "Heal",
-      musicUrl: "m1.m4a"
+      musicUrl: "./songs/m1.m4a"
     },
     {
       id: 3,

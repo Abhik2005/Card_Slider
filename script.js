@@ -17,13 +17,13 @@ async function songsApi() {
   for (let i = 0; i <= data.items.length - 1; i++) {
     var songs = {
       id: i,
-      imgUrl: "https://i.ytimg.com/vi/XLqmL9cPN1E/mqdefault.jpg",
+      imgUrl: data.items[i].track.album.images[1].url,
       title: data.items[i].track.name,
       musicUrl: data.items[i].track.preview_url,
     };
     sliderArr.push(songs);
   }
-console.log(sliderArr[0].musicUrl);
+console.log(data.items[0].track.album.images[0].url);
   var index = 0;
 
   var slider = sliderArr.map((slider, index) => {

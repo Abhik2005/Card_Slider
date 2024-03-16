@@ -23,7 +23,9 @@ async function songsApi() {
     };
     sliderArr.push(songs);
   }
-console.log(data.items[0].track.album.images[0].url);
+  console.log(sliderArr.title);
+
+  console.log(data.items[0].track.album.images[0].url);
   var index = 0;
 
   var slider = sliderArr.map((slider, index) => {
@@ -46,6 +48,33 @@ console.log(data.items[0].track.album.images[0].url);
   var pause = document.querySelector(".pause");
   var music = document.querySelector("audio");
   music.src = sliderArr[0].musicUrl;
+
+  var input = document.querySelector("input");
+  input.addEventListener("input", function (e) {
+    var card = sliderArr.filter(
+      (data) => data.title.charAt(0) == e.target.value
+    );
+    for (let i = 0; i <= card.length - 1; i++) {
+      document.querySelector(".songcard").innerHTML +=
+        "<div class='card'>" +
+        ` <h1>${card[i].title}</h1>` +
+        ` <span>${card[i].musicUrl}</span>` +
+        `<h1></h1>` +
+        `</div>`;
+  }
+  document.querySelectorAll(".card").forEach((elem)=>{
+    elem.addEventListener("click",function(e){
+      var card = sliderArr.filter(
+        (data) => data.title == e.target.innerText
+      );
+      music.src = card[0].musicUrl;
+      img.src = card[0].imgUrl;
+      h1.innerText = card[0].title;
+     musicPlay();
+  })
+});
+});
+    
 
   function musicPlay() {
     pause.style.display = "block";
@@ -121,4 +150,4 @@ console.log(data.items[0].track.album.images[0].url);
     musicPause();
   });
 }
-songsApi();
+songsApi()
